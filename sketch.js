@@ -9,7 +9,7 @@ let sz =10;
 
 let dA = 1;
 let dB = 0.5;
-let feed = 0.055;
+let feed = 0.0545; // coral growth
 let k = 0.062;
 
 function setup() {
@@ -38,6 +38,7 @@ function makeGrid(){
       next[j][i]= { a: 1, b: 0}
     }
   }
+  
   for (let n = floor(rows/2); n < floor(rows/2)+20; n++){
     for(let m = floor(cols/2); m < floor(cols/2)+20; m++){
         let x = floor(random(cols))
@@ -48,6 +49,8 @@ function makeGrid(){
     }
    
   }
+  
+     
   
 }
 
