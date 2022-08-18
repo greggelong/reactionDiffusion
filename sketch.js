@@ -5,6 +5,13 @@ let rows;
 let cols;
 let sz =5;
 
+// vars for diffusion algorithm
+
+let dA = 1;
+let dB = 0.5;
+let feed = 0.055;
+let k = 0.062;
+
 function setup() {
   createCanvas(400, 400);
   rows = floor(height/sz)
@@ -52,14 +59,32 @@ function diffuse(){
   for (let j =0; j < rows; j++){
     next[j]= [];
     for (let i =0; i <cols; i++){
-      let va = grid[j][i].a+5%255
-      let vb = grid[j][i].b-5%255
+      let a = grid[j][i].a
+      let b = grid[j][i].b
+      let va =  a + 
+                (dA * laplaceA()) -
+                (a * b *b) +
+                (feed *(1-a));
+
+      let vb = b + 
+                (dB * laplaceB()) +
+                (a * b *b) -
+                ((k + feed)*b);
+       
       next[j][i] = { a: va, b:vb }
     }
   }
   swap();
 }
 
+
+function laplaceA(){
+    return 1;
+}
+
+function laplaceB(){
+    return 1;
+}
 
 function swap(){
   // deep swap
