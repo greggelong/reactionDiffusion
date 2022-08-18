@@ -8,6 +8,9 @@ I drawing to the canvas with rectangles not using pixel array
 
 handling the arrays a bit differently too
 
+
+https://greggelong.github.io/reactionDiffusion
+
 ----
 
 http://karlsims.com/rd.html
