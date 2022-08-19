@@ -60,6 +60,7 @@ function showGrid(){
   for (let j =0; j < rows; j++){
     for (let i =0; i <cols; i++){
       let clr = floor ((grid[j][i].a - grid[j][i].b) *255)
+      //let clr = color(grid[j][i].a*255,0,grid[j][i].b*255)
 
       //clr = constrain(clr, 0,255)
       fill(clr);
